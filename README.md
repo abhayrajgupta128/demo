@@ -27,6 +27,6 @@ This is a basic server project built using **Express.js**, demonstrating how to 
    git clone https://github.com/abhayrajgupta128/demo.git
 2. Navigate to the project directory: cd demo-project
 3. Install the dependencies: yarn install
-4. Start the server: yarn dev.
+4. Start the server: yarn start.
 
-The server will now be running on http://localhost:7000.
+The server will now be running on http://localhost:3000.
