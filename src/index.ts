@@ -5,6 +5,7 @@ import morgan from "morgan";
 import { createServer } from "http";
 import dotenv from "dotenv";
 import { BaseRouter } from "./routes";
+import deviceRouter from "./routes/device.router";
 
 dotenv.config();
 
@@ -32,7 +33,7 @@ async function startServer() {
   );
 
   // Mount base routes
-  app.use("/v1", [BaseRouter]);
+  app.use("/v1", [BaseRouter, deviceRouter]);
 
   // Global Error Handling Middleware
   app.use((err: Error, _req: Request, res: Response, next: NextFunction) => {
@@ -55,7 +56,7 @@ async function startServer() {
 
   // Create and start the server
   const server = createServer(app);
-  const PORT = process.env.PORT || 7000;
+  const PORT = process.env.PORT || 3000;
 
   server.on("error", (err: Error) => {
     console.error(err);

@@ -1,6 +1,5 @@
 import {Request, Response} from "express";
 
-
 export const createDevice = async (req: Request, res: Response) => {
     try {
         res.status(201).json({ message: "Device created successfully" });

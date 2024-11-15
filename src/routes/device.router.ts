@@ -1,7 +1,10 @@
 import {Router} from 'express';
 import {DeviceController} from '../controllers';
+import { AuthMiddleware } from '../middlewares';
 
 const deviceRouter = Router();
+
+deviceRouter.use("/devices", AuthMiddleware.verifyApiKey);
 
 deviceRouter.post('/device', DeviceController.createDevice);
 deviceRouter.get('/device', DeviceController.getDevices);
